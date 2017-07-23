@@ -14,7 +14,34 @@ end
 sum_diste = sum(diste);
 
 %% proximity
-prox1 = [];
+% distance from one point to every other point
+row_num = size(X, 1);
+col_num = size(X, 1);
+prox = zeros(row_num, col_num);
+
 for j = 1:size(X,1)
-    prox1 = [prox1; abs(X(1) - X(j))];
+    for k = 1 : size(X, 1)
+        prox(j, k) = [abs(X(k) - X(j))];
+    end
+end
+
+%% accumulated proximity
+% sum of distaces to each data point from every point
+proxsum = [];
+for i = 1 : size(X, 1)
+    proxsum = [proxsum; sum(prox(:,i))];
+end
+
+%% eccentricity
+% ((2 * accumlated proximity(j)) / sum of all accumulated proximities)
+eccen = [];
+for i = 1: size(X, 1)
+    eccen = [eccen; (2 * proxsum(i)) / sum(proxsum)];
+end
+
+%% typicality
+
+typic = [];
+for i = 1 : size(X, 1)
+    typic = [typic; 1 - eccen(i)];
 end
