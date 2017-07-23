@@ -7,7 +7,7 @@ X1 = load('data.txt');
 % pause(.1);
 % end
 diste = [];
-X1 = X1(1:14,1);
+% X1 = X1(1:14,1);
 for i = 1:size(X1,1)-1
     diste = [diste; abs(X1(i)-X1(i+1))];
 end
