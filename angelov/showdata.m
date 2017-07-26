@@ -7,7 +7,7 @@ X1 = load('data.txt');
 % pause(.1);
 % end
 diste = [];
-% X1 = X1(1:14,1);
+X1 = X1(1:14,1);
 for i = 1:size(X1,1)-1
     diste = [diste; abs(X1(i)-X1(i+1))];
 end
@@ -45,4 +45,25 @@ end
 typic = [];
 for i = 1 : size(X1, 1)
     typic = [typic; 1 - eccen(i)];
+end
+
+%% average
+
+% mean = sum(X1)/size(X1,1);
+avg = mean(X1);
+
+sigma = var(X1);
+
+test = [];
+for i = 1 : size(X1, 1)
+    test = [test; (X1(i) - avg)^2];
+end
+
+sig_test = sum(test)/ size(X1, 1);
+
+
+%% normalised eccentricity eta
+eta = [];
+for m = 1 : size(X1, 1)
+    eta = [eta; ((X1(m) - avg)^2) / (2 * size(X1, 1) * sig_test)+(1/(2*(size(X1,1))))];
 end
