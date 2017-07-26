@@ -161,3 +161,30 @@ from the one preceding it and taking its modulus
 - trying to understand what accumulated proximity means
 	- is it the distance to each point in the dataset from every data point
 	OR is it just equal to the eucledian proximity
+
+----------------------------------------
+
+mer 26 lug 2017, 12.47.57, CEST
+
+On last trial created formulas out of 2nd section of angelov's paper
+- only for one dimension
+- also done for two dimension
+
+Normalized eccentricity calculated.
+sigma_square calculated (variance) is different from the regular variance.
+sigma gap principle implemented and two new figures obtained.
+
+anomaly detection done by calculating the zeta of the highest zeta and the next
+highest one and checked if its higher than 1/k where k is the number of data 
+samples(not the k in clustering); and 1 is 1-sigma
+
+introduced the artificial zeta for the 14th day and checked the above mentioned
+code but it doesn't detect the new anomaly.
+
+maybe it's detected by epsilon vicinity. 
+
+epsilon vicinity will have two sets of data points.
+	- one which satisfy the above condition of > 1/k
+	- and one of normal data points
+
+	- then their average will be subtracted and checked if its higher than 1/k
