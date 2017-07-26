@@ -33,6 +33,7 @@ for i=1:(length(Y)-1)
     end
 end
 
+figure(1)
 scatter(X,eccentr,'filled')
 hold on
 scatter(anomaly(:,1),anomaly(:,2),'filled')
