@@ -1,5 +1,11 @@
-X = linspace(1,31,31)
+close all
+clear all
+
+%X = linspace(1,31,31)
 Y = [20.2;3;6.4;11.6;8.2;2.2;11.2;5.2;6.2;0.2;1.0;4.8;2.4;3.8;11;9.2;3.2;11.8;0.2;0.2;4.8;0.2;1;8.8;2.6;9.4;6.6;5.6;0.2;0.2;15.6]
+X = linspace(1,14,14);
+Y = Y(1:14);
+
 n = 1
 %X = [1,2,3,4]
 %Y = [10,3,4,5]
@@ -15,10 +21,17 @@ for i=1:length(Y)
     prox= [prox; pi]
 end
     
-%calculating eccentricity
+%calculating the vanila eccentricity
 eccentr = []
 for i=1:length(prox)
-    eccentr = [eccentr;prox(i)/(sum(prox))]
+    eccentr = [eccentr;2*prox(i)/(sum(prox))]
+end
+
+%calculating the normalized eccentricity
+sigma_square = std(Y,1)^2;
+eccentr = []
+for i=1:length(prox)
+    eccentr = [eccentr;(((Y(i)-mean(Y))^2)/(2*length(Y)*sigma_square)+(1/2/length(Y)))]
 end
 
 %Check anomaly
