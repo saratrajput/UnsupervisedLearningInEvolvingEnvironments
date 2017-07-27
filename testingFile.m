@@ -39,7 +39,7 @@ gap = n/length(Y)
 sorted = sort(eccentr,'descend')
 anomaly = []
 for i=1:(length(Y)-1)
-    if (eccentr(i) -eccentr(i+1)) > gap
+    if (eccentr(i) -eccentr(i+1)) > gap % i think eccentr should be replaced by sorted
         for j=1:i
             anomaly = [anomaly;[i,eccentr(i)]]
         end
