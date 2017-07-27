@@ -69,11 +69,13 @@ sigang_sq = std(X1, 1) ^ 2;
 
 
 %% normalised eccentricity eta
-eta = [];
+zeta = [];
 for i = 1 : num
-    eta = [eta; ((X1(i) - avg)^2) / (2 * num * sigang_sq)+(1/(2*num))];
+    zeta = [zeta; ((X1(i) - avg)^2) / (2 * num * sigang_sq)+(1/(2*num))];
 end
 
+% typicality = complement of eccentricity 
+tau = 1 - zeta;
 %% plot
 x_axis = linspace(1, num, num);
 
@@ -93,7 +95,7 @@ ylabel('rainfall in mm')
 
 %% 
 figure
-scatter(x_axis, eta, '*')
+scatter(x_axis, zeta, '*')
 axis([0 15 0 0.4])
 hline = refline([0 1/num])
 hline.Color = 'g';
@@ -110,11 +112,11 @@ ylabel('Normalized Eccentricity(\zeta)')
 
 n = 1;
 gap = n/num;
-[sorted, ind] = sort(eta,'descend');
+[sorted, ind] = sort(zeta,'descend');
 anomaly = [];
-for i= 1 : (num - 1)
+for i = 1 : (num - 1)
     if (sorted(i) - sorted(i + 1)) > gap
-        for j=1:i
+        for j = 1 : i
             anomaly = [anomaly; [ind(j), sorted(j)]]
         end
     end

@@ -193,3 +193,12 @@ epsilon vicinity will have two sets of data points.
 
 gio 27 lug 2017, 11.55.19, CEST
 
+changes made to anomaly detection
+	- index of original array before sorting introduced
+	- now it detects the artificial rainfall for the 14th day
+	- i changed to j in for loop
+	- eccentr changed to sorted in if condition
+
+- Typicality is the complement of eccentrincity
+
+- vid file saved, some more changes needed to slow it down
