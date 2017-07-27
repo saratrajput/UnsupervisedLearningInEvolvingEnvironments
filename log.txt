@@ -188,3 +188,8 @@ epsilon vicinity will have two sets of data points.
 	- and one of normal data points
 
 	- then their average will be subtracted and checked if its higher than 1/k
+
+----------------------------------------
+
+gio 27 lug 2017, 11.55.19, CEST
+

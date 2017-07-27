@@ -70,8 +70,8 @@ sigang_sq = std(X1, 1) ^ 2;
 
 %% normalised eccentricity eta
 eta = [];
-for m = 1 : num
-    eta = [eta; ((X1(m) - avg)^2) / (2 * num * sigang_sq)+(1/(2*num))];
+for i = 1 : num
+    eta = [eta; ((X1(i) - avg)^2) / (2 * num * sigang_sq)+(1/(2*num))];
 end
 
 %% plot
@@ -110,14 +110,15 @@ ylabel('Normalized Eccentricity(\zeta)')
 
 n = 1;
 gap = n/num;
-sorted = sort(eta,'descend');
+[sorted, ind] = sort(eta,'descend');
 anomaly = [];
 for i= 1 : (num - 1)
-    if (eta(i) - eta(i + 1)) > gap
+    if (sorted(i) - sorted(i + 1)) > gap
         for j=1:i
-            anomaly = [anomaly; [i, eta(i)]];
+            anomaly = [anomaly; [ind(j), sorted(j)]]
         end
     end
 end
 
-%%
+%% epsilon vicinity
+
