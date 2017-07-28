@@ -202,3 +202,15 @@ changes made to anomaly detection
 - Typicality is the complement of eccentrincity
 
 - vid file saved, some more changes needed to slow it down
+
+central repository for the bib
+bib style - ieee tran
+point to the bib file 
+latex then bibtek then latek twice
+ability to point bibtek online
+
+25% introduction, motivation, 
+25-30 % description of what we did
+rest experimental results
+
+include applications in robotics like for sensors
