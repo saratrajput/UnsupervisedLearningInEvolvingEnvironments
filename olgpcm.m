@@ -30,6 +30,8 @@ function [rhovals,summembership,U, Youtn, Y, Normvals, bend] = olgpcm(X,Y,bi0,K,
   figure; % S
   plot(Y(:,absc),Y(:,ord),'r*',X(tinterval,absc),X(tinterval,ord),'b.')
   axis([0 1 0 1]);
+  title('Clustering with K = 4');
+  
   grid;
   drawnow;
   count=0;
@@ -90,6 +92,9 @@ function [rhovals,summembership,U, Youtn, Y, Normvals, bend] = olgpcm(X,Y,bi0,K,
     axis([0 1 0 1]);
     grid;
     drawnow;
+    title('Clustering with K = 4');
+    xlabel('X1');
+    ylabel('X2');
     
     
     

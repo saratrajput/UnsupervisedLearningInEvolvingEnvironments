@@ -1,7 +1,7 @@
 clear all, close all
 X = load('driftdata.txt');
-vidObj = VideoWriter('test1.avi');
-open(vidObj);
+% vidObj = VideoWriter('test1.avi');
+% open(vidObj);
 % aviobj = avifile('example.avi')
 set(gcf,'renderer','zbuffer') 
 k_test = 1;
@@ -16,9 +16,9 @@ axis([min(X(:,1)) max(X(:,1)) min(X(:,2)) max(X(:,2))]);
 % M = getframe;
 % aviobj=addframe(aviobj,M);
 % drawnow
-pause(0.02);
+pause(0.3);
 M(k_test) = getframe;
-writeVideo(vidObj, M);
+% writeVideo(vidObj, M);
 k_test = k_test + 1;
 % writeVideo(vidObj, M);
 % pause(.1);
@@ -27,4 +27,4 @@ k_test = k_test + 1;
 
 end
 
-close(vidObj);
+% close(vidObj);

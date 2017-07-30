@@ -214,3 +214,17 @@ ability to point bibtek online
 rest experimental results
 
 include applications in robotics like for sensors
+
+----------------------------------------
+
+dom 30 lug 2017, 16.09.19, CEST
+
+Things needed in report:
+	- a video comparing anomaly detection and anomaly detection failure.
+	- a slower video of showdriftdata
+	- the graphs of olgpcm with some labels
+	- the graphs of 2d done by zsolt
+	-  
+
+videos of showdrift, clustering and anomaly recorded.
+graphs of olgpcm cannot be taken with labels and title.
