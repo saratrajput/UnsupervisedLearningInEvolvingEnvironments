@@ -46,6 +46,10 @@ end
 
 figure(1)
 scatter(eccentr(:,1),eccentr(:,2),'filled')
+title('"Sigma gap" principle on artificial data with anomaly')
+xlabel('Artificial data with sliding window size = 31')
+ylabel('Normalized Eccentricity(\zeta)')
 hold on
-%hline = refline([0 mean(eccentr)])
+hline = refline([0 1/31])
+hline.Color = 'k';
 scatter(anomaly(:,1),anomaly(:,2),'filled')
